@@ -1,0 +1,1 @@
+# asyncapi-avro-ref-issue
