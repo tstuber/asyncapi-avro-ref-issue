@@ -1,45 +1,36 @@
-{
-    "type": "record",
-    "namespace": "com.example",
-    "name": "Person",
-    "fields": [
+[
+    {
+      "type": "record",
+      "name": "Address",
+      "namespace": "com.example",
+      "fields": [
         {
-            "name": "Name",
-            "type": "string"
+          "name": "streetaddress",
+          "type": "string"
         },
         {
-            "name": "currentAddress",
-            "type": [
-                "null",
-                {
-                    "type": "array",
-                    "items": {
-                        "type": "record",
-                        "name": "Address",
-                        "namespace": "com.example",
-                        "fields": [
-                            {
-                                "name": "zipCode",
-                                "type": "int"
-                            },
-                            {
-                                "name": "region",
-                                "type": "string"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        {
-            "name": "futureAddress",
-            "type": [
-                "null",
-                {
-                    "type": "array",
-                    "items": "com.example.Address"
-                }
-            ]
+          "name": "city",
+          "type": "string"
         }
-    ]
-}
+      ]
+    },
+    {
+      "type": "record",
+      "name": "Person",
+      "namespace": "com.example",
+      "fields": [
+        {
+          "name": "firstname",
+          "type": "string"
+        },
+        {
+          "name": "lastname",
+          "type": "string"
+        },
+        {
+          "name": "address",
+          "type": "com.example.Address"
+        }
+      ]
+    }
+  ]
