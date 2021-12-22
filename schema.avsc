@@ -1,0 +1,45 @@
+{
+    "type": "record",
+    "namespace": "com.example",
+    "name": "Person",
+    "fields": [
+        {
+            "name": "Name",
+            "type": "string"
+        },
+        {
+            "name": "currentAddress",
+            "type": [
+                "null",
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "record",
+                        "name": "Address",
+                        "namespace": "com.example",
+                        "fields": [
+                            {
+                                "name": "zipCode",
+                                "type": "int"
+                            },
+                            {
+                                "name": "region",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "futureAddress",
+            "type": [
+                "null",
+                {
+                    "type": "array",
+                    "items": "com.example.Address"
+                }
+            ]
+        }
+    ]
+}
